@@ -8,7 +8,19 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com</groupId>
+    <distributionManagement>
+        <repository>
+            <id>my-repo</id>
+            <name>My Internal Repository</name>
+            <url>https://your.maven.repo.url/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>my-repo-snapshots</id>
+            <name>My Internal Snapshot Repository</name>
+            <url>https://your.maven.repo.url/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <groupId>com</groupId>
 	<artifactId>secure-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>secure-gateway</name>
@@ -35,7 +47,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -46,6 +57,34 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>2.2.20</version> <!-- or the latest version -->
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate5</artifactId>
+            <version>2.17.0</version> <!-- Use the version matching your Jackson version -->
+        </dependency>
+        <dependency>
+            <groupId>org.purejava</groupId>
+            <artifactId>tweetnacl-java</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.september</groupId>-->
+<!--            <artifactId>utils</artifactId>-->
+<!--            <version>1.1.0</version>-->
+<!--        </dependency>-->
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
